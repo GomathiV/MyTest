@@ -59,11 +59,11 @@ article {
 
 <nav>
   <ul>
-    <li><a href="/CustomerDetail/customer/user">Customer</a></li>
-    <li><a href="/CustomerDetail/customer/product">Product</a></li>
-    <li><a href="/CustomerDetail/customer/vehicle">Vehicle</a></li>
-    <li><a href="/CustomerDetail/customer/subscription">Subscription</a></li>   
-    <li><a href="/CustomerDetail/customer/viewsubscriptiondetail">View Subscription</a></li>
+    <li><a href="/CustomerDetail/customer">Customer</a></li>
+    <li><a href="/CustomerDetail/product">Product</a></li>
+    <li><a href="/CustomerDetail/vehicle">Vehicle</a></li>
+    <li><a href="/CustomerDetail/vehicle/subscription">Subscription</a></li>   
+    <li><a href="/CustomerDetail/vehicle/viewsubscriptiondetail">View Subscription</a></li>
     
   </ul>
 </nav>

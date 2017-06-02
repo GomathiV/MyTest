@@ -61,7 +61,7 @@ public class CustomerDetailConfiguration extends WebMvcConfigurerAdapter {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName("com.mysql.jdbc.Driver");
         dataSource.setUrl("jdbc:mysql://localhost:3306/mysql");
-        dataSource.setUsername("admin");
+        dataSource.setUsername("admin");	
         dataSource.setPassword("admin");
          
         return dataSource;
@@ -71,4 +71,5 @@ public class CustomerDetailConfiguration extends WebMvcConfigurerAdapter {
     public CustomerDAO getCustomerDAO() {
         return new CustomerDAOImpl(getDataSource());
     }
+
 }
