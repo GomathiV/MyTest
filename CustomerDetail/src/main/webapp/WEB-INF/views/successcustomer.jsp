@@ -70,8 +70,7 @@ article {
 
 <article>
 
-
-<div class="success">
+	<div class="success">
 	<br>
 	
 	
@@ -91,7 +90,8 @@ article {
 	
 	
 		Confirmation message : Registration sucessfully completed 
-</div>	
+	</div>
+	
 </article>
 
 <footer></footer>

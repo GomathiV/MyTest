@@ -4,12 +4,11 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Subscription Details</title>
+<title>Product Details</title>
 
 	<link href="<c:url value='/static/css/bootstrap.css' />" rel="stylesheet"></link>
 	<link href="<c:url value='/static/css/custom.css' />" rel="stylesheet"></link>
-</head>
-   <style>
+</head>  <style>
 div.container {
     width: 100%;
     border: 1px solid gray;
@@ -56,7 +55,7 @@ article {
 
 
 <header>
-   <h1>Subscription Detail</h1>
+   <h1>Vehicle Detail</h1>
 </header>
 
 <nav>
@@ -72,62 +71,49 @@ article {
 
 <article>
 
-
  	<div class="form-container">
  	
  	<h1>Enrollment Form</h1>
  	
-	<form:form method="POST" modelAttribute="subscription" class="form-horizontal">
+	<form:form method="POST" modelAttribute="vehicle" class="form-horizontal">
 	
 		<div class="row">
 			<div class="form-group col-md-12">
-				<label class="col-md-3 control-lable" for="subscriptionId">Subscription ID</label>
+				<label class="col-md-3 control-lable" for="internalVehicleId">Vehicle ID</label>
 				<div class="col-md-7">
-					<form:input type="text" path="subscriptionId" id="subscriptionId" class="form-control input-sm"/>
+					<form:input type="text" path="internalVehicleId" id="internalVehicleId" class="form-control input-sm"/>
 					<div class="has-error">
-						<form:errors path="subscriptionId" class="help-inline"/>
+						<form:errors path="internalVehicleId" class="help-inline"/>
 					</div>
 				</div>
 			</div>
 		</div>
 		
+
 		<div class="row">
 			<div class="form-group col-md-12">
-				<label class="col-md-3 control-lable" for="vehicle">VIN</label>
+				<label class="col-md-3 control-lable" for="vin">Vin</label>
 				<div class="col-md-7">
-					<form:input type="text" path="vehicle.vin" id="vehicle.vin" class="form-control input-sm"/>
+					<form:input type="text" path="vin" id="vin" class="form-control input-sm"/>
 					<div class="has-error">
-						<form:errors path="vehicle.vin" class="help-inline"/>
+						<form:errors path="vin" class="help-inline"/>
 					</div>
 				</div>
 			</div>
 		</div>
-		
+
 		<div class="row">
 			<div class="form-group col-md-12">
-				<label class="col-md-3 control-lable" for="customer">Customer Id</label>
+				<label class="col-md-3 control-lable" for="region">Region</label>
 				<div class="col-md-7">
-					<form:input type="text" path="customer.internalCustomerId" id="customer.internalCustomerId" class="form-control input-sm"/>
+					<form:input type="text" path="region" id="region" class="form-control input-sm"/>
 					<div class="has-error">
-						<form:errors path="customer.internalCustomerId" class="help-inline"/>
+						<form:errors path="region" class="help-inline"/>
 					</div>
 				</div>
 			</div>
 		</div>
-		
-		<div class="row">
-			<div class="form-group col-md-12">
-				<label class="col-md-3 control-lable" for="product">Product Id</label>
-				<div class="col-md-7">
-					<form:input type="text" path="product.internalProductId" id="product.internalProductId" class="form-control input-sm"/>
-					<div class="has-error">
-						<form:errors path="product.internalProductId" class="help-inline"/>
-					</div>
-				</div>
-			</div>
-		</div>
-		
-		
+
 		<div class="row">
 			<div class="form-actions floatRight">
 				<input type="submit" value="Register" class="btn btn-primary btn-sm">

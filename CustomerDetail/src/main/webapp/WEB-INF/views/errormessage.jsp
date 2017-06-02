@@ -1,13 +1,14 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+    pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
 <html>
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-	<title>Customer Enrollment</title>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Product Details</title>
+
+	<link href="<c:url value='/static/css/bootstrap.css' />" rel="stylesheet"></link>
 	<link href="<c:url value='/static/css/custom.css' />" rel="stylesheet"></link>
-</head>
-  <style>
+</head>  <style>
 div.container {
     width: 100%;
     border: 1px solid gray;
@@ -54,7 +55,7 @@ article {
 
 
 <header>
-   <h1>Customer Detail</h1>
+   <h1>Vehicle Detail</h1>
 </header>
 
 <nav>
@@ -70,32 +71,22 @@ article {
 
 <article>
 
-
-<div class="success">
-	<br>
+ 	<div class="form-container">
+ 	
+ 	<h1></h1>
+ 	<b>
+ 	<p align="center" > Data is not found. Please try with another value.</p>
+ 	</b>
+ 	
+	</div>
 	
 	
-	            <table class="table table-hover">
-                <thead>
-
-                <tr>    <td>Customer Id: </td>  <td>${customer.internalCustomerId}</td></tr>
-                   <tr>    <td>Firstname : </td>    <td>${customer.firstName}</td></tr>
-                 <tr>      <td>Lastname :  </td> <td>${customer.lastName}</td></tr>
-                 <tr>      <td>UserName : </td> <td>${customer.userName}</td> </tr>
-                 <tr>      <td>Email : </td><td>${customer.email}</td></tr>
-                 <tr>      <td>Phone Numer: </td><td>${customer.phoneNumber}</td></tr>
-                        
-                </thead>
-               
-            </table>
-	
-	
-		Confirmation message : Registration sucessfully completed 
-</div>	
 </article>
 
 <footer></footer>
 
 </div>
+
+
 </body>
 </html>

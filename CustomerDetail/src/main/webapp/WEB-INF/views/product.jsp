@@ -1,4 +1,4 @@
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
@@ -9,7 +9,7 @@
 	<link href="<c:url value='/static/css/bootstrap.css' />" rel="stylesheet"></link>
 	<link href="<c:url value='/static/css/custom.css' />" rel="stylesheet"></link>
 </head>
- <style>
+  <style>
 div.container {
     width: 100%;
     border: 1px solid gray;
@@ -49,17 +49,29 @@ article {
 
 
 <body>
+
+
+
 <div class="container">
+
+
+<header>
+   <h1>Product Detail</h1>
+</header>
 
 <nav>
   <ul>
-    <li><a href="/CustomerDetail/customer/user">User</a></li>
+    <li><a href="/CustomerDetail/customer/user">Customer</a></li>
     <li><a href="/CustomerDetail/customer/product">Product</a></li>
-    <li><a href="/CustomerDetail/customer/subscription">User Products Subscription</a></li>
+    <li><a href="/CustomerDetail/customer/vehicle">Vehicle</a></li>
+    <li><a href="/CustomerDetail/customer/subscription">Subscription</a></li>   
+    <li><a href="/CustomerDetail/customer/viewsubscriptiondetail">View Subscription</a></li>
+    
   </ul>
 </nav>
 
 <article>
+
 
  	<div class="form-container">
  	

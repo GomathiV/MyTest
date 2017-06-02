@@ -56,11 +56,19 @@ article {
 
 <div class="container">
 
+
+<header>
+   <h1>Customer Detail</h1>
+</header>
+
 <nav>
   <ul>
-    <li><a href="/CustomerDetail/customer/user">User</a></li>
+    <li><a href="/CustomerDetail/customer/user">Customer</a></li>
     <li><a href="/CustomerDetail/customer/product">Product</a></li>
-    <li><a href="/CustomerDetail/customer/subscription">User Products Subscription</a></li>
+    <li><a href="/CustomerDetail/customer/vehicle">Vehicle</a></li>
+    <li><a href="/CustomerDetail/customer/subscription">Subscription</a></li>   
+    <li><a href="/CustomerDetail/customer/viewsubscriptiondetail">View Subscription</a></li>
+    
   </ul>
 </nav>
 

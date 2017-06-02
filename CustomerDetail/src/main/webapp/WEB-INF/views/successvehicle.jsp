@@ -4,7 +4,7 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-	<title>Customer Enrollment</title>
+	<title>Vehicle Details</title>
 	<link href="<c:url value='/static/css/custom.css' />" rel="stylesheet"></link>
 </head>
   <style>
@@ -54,7 +54,7 @@ article {
 
 
 <header>
-   <h1>Customer Detail</h1>
+   <h1>Vehicle Detail</h1>
 </header>
 
 <nav>
@@ -70,7 +70,6 @@ article {
 
 <article>
 
-
 <div class="success">
 	<br>
 	
@@ -78,12 +77,9 @@ article {
 	            <table class="table table-hover">
                 <thead>
 
-                <tr>    <td>Customer Id: </td>  <td>${customer.internalCustomerId}</td></tr>
-                   <tr>    <td>Firstname : </td>    <td>${customer.firstName}</td></tr>
-                 <tr>      <td>Lastname :  </td> <td>${customer.lastName}</td></tr>
-                 <tr>      <td>UserName : </td> <td>${customer.userName}</td> </tr>
-                 <tr>      <td>Email : </td><td>${customer.email}</td></tr>
-                 <tr>      <td>Phone Numer: </td><td>${customer.phoneNumber}</td></tr>
+                <tr>    <td>Vehicle Id: </td>  <td>${vehicle.internalVehicleId}</td></tr>
+                   <tr>    <td>VIN : </td>    <td>${vehicle.vin}</td></tr>
+                 <tr>      <td>Region :  </td> <td>${vehicle.region}</td></tr>
                         
                 </thead>
                
@@ -91,7 +87,8 @@ article {
 	
 	
 		Confirmation message : Registration sucessfully completed 
-</div>	
+	</div>
+	
 </article>
 
 <footer></footer>
