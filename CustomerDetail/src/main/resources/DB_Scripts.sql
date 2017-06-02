@@ -24,7 +24,7 @@ CREATE TABLE PRODUCT (internalProductId VARCHAR(20), productName VARCHAR(20), re
     autoRenew VARCHAR(20), price VARCHAR(20),curreny VARCHAR(20));
 
 INSERT INTO PRODUCT (internalProductId, productName, region, autoRenew, price, curreny)
-VALUES  ('1','productName', 'region', 'autoRenew', 'price','123');
+VALUES  ('3','productName', 'region', 'autoRenew', 'price','123');
 
 select * from PRODUCT;
 
@@ -37,5 +37,30 @@ CREATE TABLE VEHICLE (internalVehicleId VARCHAR(20), vin VARCHAR(20), region VAR
 INSERT INTO VEHICLE (internalVehicleId, vin, region)
 VALUES  ('1','vin', 'region');
 
+Select * from VEHICLE;
 
+---------------------------------------------------------------------------------------------
+
+
+CREATE TABLE SUBSCRIPTION (subscriptionId VARCHAR(20), vin VARCHAR(20), customerId VARCHAR(20), productId VARCHAR(20) );
+
+INSERT INTO SUBSCRIPTION (subscriptionId, vin, customerId, productId) values ('1','123','1','3');
+
+select * from subscription;
+------------------------------------------------------------------------------------------------
+
+Select internalCustomerId, firstName, lastName, userName, email, phoneNumber from CUSTOMER;
+
+Select PD.internalProductId, PD.productName, PD.region, PD.autoRenew, PD.pricE  from SUBSCRIPTION SUB 
+LEFT JOIN PRODUCT PD ON SUB.productId = PD.internalProductId
+WHERE SUB.subscriptionId = '1';
+
+Select *
+from SUBSCRIPTION SUB 
+LEFT JOIN PRODUCT PD ON SUB.productId = PD.internalProductId
+WHERE SUB.subscriptionId = '1';
+
+Select internalCustomerId, firstName, lastName, userName, email, phoneNumber from CUSTOMER where internalCustomerId = 1;
+
+Select internalVehicleId, vin, region from VEHICLE where vin = 32;
 
