@@ -7,6 +7,10 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.support.ResourceBundleMessageSource;
+import org.springframework.data.authentication.UserCredentials;
+import org.springframework.data.mongodb.MongoDbFactory;
+import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.data.mongodb.core.SimpleMongoDbFactory;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
@@ -17,6 +21,11 @@ import org.springframework.web.servlet.view.JstlView;
 
 import com.customerdetail.service.CustomerDAO;
 import com.customerdetail.service.CustomerDAOImpl;
+import com.mongodb.MongoClient;
+import com.websystique.springmvc.service.CustomerMongoDao;
+import com.websystique.springmvc.service.CustomerMongoDaoImpl;
+import com.websystique.springmvc.service.CustomerMongoService;
+import com.websystique.springmvc.service.CustomerMongoServiceImpl;
 
 @Configuration
 @EnableWebMvc
@@ -71,5 +80,37 @@ public class CustomerDetailConfiguration extends WebMvcConfigurerAdapter {
     public CustomerDAO getCustomerDAO() {
         return new CustomerDAOImpl(getDataSource());
     }
+    
+    @Bean
+    public MongoDbFactory mongoDbFactory() throws Exception {
+        MongoClient mongoClient = new MongoClient("localhost", 27017);
+        UserCredentials userCredentials = new UserCredentials("", "");
+        return new SimpleMongoDbFactory(mongoClient, "customerdetail", userCredentials);
+    }
+ 
+    @Bean
+    public MongoTemplate mongoTemplate() throws Exception {
+        MongoTemplate mongoTemplate = new MongoTemplate(mongoDbFactory());
+        return mongoTemplate;
+    }
+       
+    @Bean
+    public CustomerMongoService getCustomerMongoService() {
+    	return new CustomerMongoServiceImpl();
+    }
+    
+    @Bean
+    public CustomerMongoDao getCustomerMongoDao() {
+    	return new CustomerMongoDaoImpl();
+    }
+    
+    
+    
+   /* public CarService getCarServiceContext() {
+
+    	AbstractApplicationContext context = new AnnotationConfigApplicationContext(ApplicationConfig.class);
+    	CarService carService = (CarService) context.getBean("carService");
+    	return carService;
+    }*/
 
 }

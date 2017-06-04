@@ -12,9 +12,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.customerdetail.model.Customer;
-import com.customerdetail.model.Product;
-import com.customerdetail.model.Subscription;
-import com.customerdetail.model.Vehicle;
 import com.customerdetail.service.CustomerDAO;
 
 @Controller
@@ -23,7 +20,7 @@ public class CustomerController {
 
 	@Autowired
 	CustomerDAO customerDAO;
-
+	
 	/*
 	 * This method will serve as default GET handler.
 	 */
@@ -59,5 +56,5 @@ public class CustomerController {
 	    mav.setViewName("errormessage");
 	    return "errormessage";
 	 }
-
+	 
 }

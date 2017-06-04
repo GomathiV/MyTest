@@ -30,5 +30,8 @@ public interface CustomerDAO {
 	public List<Product> getProductList(String subscriptionId);
 	
 	public Subscription getSubscription(String subscriptionId, String custId, String vin) ;
+	
+	public void saveCustomer(Customer customer);
+
 
 }

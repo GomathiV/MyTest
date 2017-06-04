@@ -1,14 +1,11 @@
-package com.customerdetail.model;
+package com.customerdetail.valueobject;
 
 import java.util.HashMap;
 import java.util.Map;
 
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
-
-@Document(collection = "products")
-	public class Product {
-	@Id
+	public class ProductVO {
+	
+	
 	private String internalProductId;
 	private String name;
 	private String region;
@@ -18,11 +15,11 @@ import org.springframework.data.mongodb.core.mapping.Document;
 	private String createdDateTime;
 	private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 	
-	public Product() {
+	public ProductVO() {
 	
 	}
 	
-	public Product(String internalProductId, String name, 
+	public ProductVO(String internalProductId, String name, 
 			String region, String autoRenew, String price, String curreny) {
 		
 		this.internalProductId = internalProductId;
@@ -102,5 +99,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 	public void setAdditionalProperty(String name, Object value) {
 	this.additionalProperties.put(name, value);
 	}
+	
+	
 	
 }

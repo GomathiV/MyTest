@@ -1,24 +1,14 @@
-package com.customerdetail.model;
+package com.customerdetail.valueobject;
 
-import java.io.Serializable;
 import java.util.Date;
 
-import javax.validation.constraints.Size;
-
-import org.hibernate.validator.constraints.Email;
-import org.hibernate.validator.constraints.NotEmpty;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
-
-
-@Document(collection = "customers")
-public class Customer implements Serializable {
+public class CustomerVO {
 	
-	public Customer() {
-		// TODO Auto-generated constructor stub
+	public CustomerVO() {
+
 	}
 	
-	public Customer(String internalCustomerId, String firstName, 
+	public CustomerVO(String internalCustomerId, String firstName, 
 			String lastName, String userName, String email, 
 			String phoneNumber) {
 
@@ -31,36 +21,30 @@ public class Customer implements Serializable {
 	//	this.createdDateTime = createdDateTime;
 		
 	}
-
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = -4798786549279089452L;
-	@Id
+	
 	private String internalCustomerId;
 
-	@Size(min=3, max=30) 
+	//@Size(min=3, max=30) 
 	private String firstName;
 
-	@Size(min=3, max=30) 
+	//@Size(min=3, max=30) 
 	private String lastName;
 	
-	@Size(min=3, max=30) 
+	//@Size(min=3, max=30) 
 	private String userName = "user name";
 	
 	/*@DateTimeFormat(pattern="dd/MM/yyyy") 
 	@Past @NotNull
 	private Date dob;*/
 	
-	@Email @NotEmpty
+//	@Email @NotEmpty
 	private String email;
 	
-	@NotEmpty
+//	@NotEmpty
 	private String phoneNumber = "1234567890";
 	
 //	private Date createdDateTime;
 	
-
 	public String getFirstName() {
 		return firstName;
 	}
@@ -108,15 +92,7 @@ public class Customer implements Serializable {
 	public void setPhoneNumber(String phoneNumber) {
 		this.phoneNumber = phoneNumber;
 	}
-	/*
-	public Date getCreatedDateTime() {
-		return createdDateTime;
-	}
 
-	public void setCreatedDateTime(Date createdDateTime) {
-		this.createdDateTime = createdDateTime;
-	}
-*/
 	@Override
 	public String toString() {
 		return "Student [firstName=" + firstName + ", lastName=" + lastName
@@ -126,5 +102,6 @@ public class Customer implements Serializable {
 	
 	
 
-}
 
+
+}

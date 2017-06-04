@@ -6,7 +6,8 @@ import java.util.List;
 
 import javax.sql.DataSource;
 
-import org.springframework.jdbc.core.BeanPropertyRowMapper;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 
@@ -23,6 +24,36 @@ public class CustomerDAOImpl implements CustomerDAO {
         jdbcTemplate = new JdbcTemplate(dataSource);
     }
  
+    
+    
+    
+    
+    @Autowired
+    MongoTemplate mongoTemplate;
+	/*
+	public CustomerRepositoryDAOImpl(MongoTemplate mongoTemplate){
+			this.mongoTemplate = mongoTemplate;
+	}*/
+
+	@Override
+	public void saveCustomer(Customer customer) {
+
+		mongoTemplate.insert(customer);
+		
+	}
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     @Override
     public void saveOrUpdate(Customer customer) {
     	
@@ -167,5 +198,6 @@ public class CustomerDAOImpl implements CustomerDAO {
 			return customer;
 		}
 	}
+
     
 }

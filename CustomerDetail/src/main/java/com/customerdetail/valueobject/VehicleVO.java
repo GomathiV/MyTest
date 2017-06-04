@@ -1,14 +1,12 @@
-package com.customerdetail.model;
+package com.customerdetail.valueobject;
 
 import java.util.HashMap;
 import java.util.Map;
 
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
+public class VehicleVO {
+	
 
-@Document(collection = "vehicles")
-public class Vehicle {
-	@Id
+	
 	private String internalVehicleId;
 	private String vin;
 	private String region;
@@ -16,11 +14,11 @@ public class Vehicle {
 	private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 	
 	
-	public Vehicle() {
+	public VehicleVO() {
 
 	}
 	
-	public Vehicle(String internalVehicleId,String vin,String region) {
+	public VehicleVO(String internalVehicleId,String vin,String region) {
 		this.internalVehicleId = internalVehicleId;
 		this.vin = vin;
 		this.region = region;
@@ -71,4 +69,6 @@ public class Vehicle {
 	this.additionalProperties.put(name, value);
 	}
 	
+
+
 }
