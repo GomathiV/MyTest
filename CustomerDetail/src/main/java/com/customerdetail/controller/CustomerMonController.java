@@ -53,72 +53,7 @@ public class CustomerMonController {
 		return new ResponseEntity<Void>(headers, HttpStatus.CREATED);
 	}
 	
-	
-	
-	@RequestMapping(value = "/products/", method = RequestMethod.GET)
-	public ResponseEntity<List<Product>> listAllProducts() {
-		List<Product> products = customerMongoService.findAllProduct();
-		if(products.isEmpty()){
-			return new ResponseEntity<List<Product>>(HttpStatus.NO_CONTENT);//You many decide to return HttpStatus.NOT_FOUND
-		}
-		return new ResponseEntity<List<Product>>(products, HttpStatus.OK);
-	}
 
-	@RequestMapping(value = "/products/", method = RequestMethod.POST, consumes = {"text/plain", "application/*"}, produces = {"text/plain", "application/*"})
-	@ResponseBody
-	public ResponseEntity<Void> createProduct(@RequestBody ProductVO productVO, UriComponentsBuilder ucBuilder) {
-		
-		customerMongoService.create(transferProductObj(productVO));
-
-		HttpHeaders headers = new HttpHeaders();
-		headers.setLocation(ucBuilder.path("/products/{id}").buildAndExpand(productVO.getInternalProductId()).toUri());
-		return new ResponseEntity<Void>(headers, HttpStatus.CREATED);
-	}
-	
-
-	@RequestMapping(value = "/vehicles/", method = RequestMethod.GET)
-	public ResponseEntity<List<Vehicle>> listAllVehicle() {
-		List<Vehicle> vehicles = customerMongoService.findAllVehicle();
-		if(vehicles.isEmpty()){
-			return new ResponseEntity<List<Vehicle>>(HttpStatus.NO_CONTENT);//You many decide to return HttpStatus.NOT_FOUND
-		}
-		return new ResponseEntity<List<Vehicle>>(vehicles, HttpStatus.OK);
-	}
-
-	@RequestMapping(value = "/vehicles/", method = RequestMethod.POST, consumes = {"text/plain", "application/*"}, produces = {"text/plain", "application/*"})
-	@ResponseBody
-	public ResponseEntity<Void> createVehicle(@RequestBody VehicleVO vehicleVO, UriComponentsBuilder ucBuilder) {
-		
-		customerMongoService.create(transferVehicleObj(vehicleVO));
-
-		HttpHeaders headers = new HttpHeaders();
-		headers.setLocation(ucBuilder.path("/vehicles/{id}").buildAndExpand(vehicleVO.getInternalVehicleId()).toUri());
-		return new ResponseEntity<Void>(headers, HttpStatus.CREATED);
-	}
-	
-
-
-
-	@RequestMapping(value = "/subscriptions/", method = RequestMethod.GET)
-	public ResponseEntity<List<Subscriptions>> listAllSubscription() {
-		List<Subscriptions> subscriptions = customerMongoService.findAllSubscription();
-		if(subscriptions.isEmpty()){
-			return new ResponseEntity<List<Subscriptions>>(HttpStatus.NO_CONTENT);//You many decide to return HttpStatus.NOT_FOUND
-		}
-		return new ResponseEntity<List<Subscriptions>>(subscriptions, HttpStatus.OK);
-	}
-
-	@RequestMapping(value = "/subscriptions/", method = RequestMethod.POST, consumes = {"text/plain", "application/*"}, produces = {"text/plain", "application/*"})
-	@ResponseBody
-	public ResponseEntity<Void> createVehicle(@RequestBody SubscriptionVO subscriptionVO, UriComponentsBuilder ucBuilder) {
-		
-		customerMongoService.create(transferSubscriptionObj(subscriptionVO));
-
-		HttpHeaders headers = new HttpHeaders();
-		headers.setLocation(ucBuilder.path("/subscriptions/{id}").buildAndExpand(subscriptionVO.getSubscriptionId()).toUri());
-		return new ResponseEntity<Void>(headers, HttpStatus.CREATED);
-	}
-	
 	AbstractApplicationContext contextc = new AnnotationConfigApplicationContext(ApplicationConfig.class);
 	CustomerMongoService customerMongoService = (CustomerMongoService) contextc.getBean("customerMongoService");
 
